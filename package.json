@@ -27,24 +27,18 @@
     "files": [
       "dist/electron/**/*"
     ],
-    "dmg": {
-      "contents": [
-        {
-          "x": 410,
-          "y": 150,
-          "type": "link",
-          "path": "/Applications"
-        },
-        {
-          "x": 130,
-          "y": 150,
-          "type": "file"
-        }
-      ]
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "iammvp",
+        "repo": "electronautoupdate"
+      }
+    ],
+    "releaseInfo":{
+      "releaseName":"${platform}-${version}"
     },
     "mac": {
-      "icon": "build/icons/icon.icns",
-      "publish": ["github"]
+      "icon": "build/icons/icon.icns"
     },
     "win": {
       "icon": "build/icons/icon.ico"
