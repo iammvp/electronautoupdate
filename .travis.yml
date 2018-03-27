@@ -25,7 +25,7 @@ before_install:
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install --no-install-recommends -y icnsutils graphicsmagick xz-utils; fi
 
 install:
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then security delete-certificate -c "Apple Worldwide Developer Relations Certification Authority" /Library/Keychains/System.keychain; security delete-certificate -c "Apple Worldwide Developer Relations Certification Authority" /Library/Keychains/login.keychain; curl -O -L http://developer.apple.com/certificationauthority/AppleWWDRCA.cer; security import AppleWWDRCA.cer  -k ~/Library/Keychains/login.keychain -A; fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then security delete-certificate -c "Apple Worldwide Developer Relations Certification Authority" /Library/Keychains/System.keychain; security delete-certificate -c "Apple Worldwide Developer Relations Certification Authority" /Library/Keychains/login.keychain; curl -O -L http://developer.apple.com/certificationauthority/AppleWWDRCA.cer; security import AppleWWDRCA.cer  -k ~/Library/Keychains/system.keychain -A; security import AppleWWDRCA.cer  -k ~/Library/Keychains/login.keychain -A; fi
 - nvm install 7
 - curl -o- -L https://yarnpkg.com/install.sh | bash
 - source ~/.bashrc
