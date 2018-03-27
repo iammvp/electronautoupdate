@@ -1,6 +1,6 @@
 {
   "name": "test",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "",
   "description": "An electron-vue project",
   "license": null,
@@ -16,7 +16,7 @@
     "pack:main": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.main.config.js",
     "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",
     "postinstall": "",
-    "release":"node .electron-vue/build.js && electron-builder"
+    "release": "node .electron-vue/build.js && electron-builder"
   },
   "build": {
     "productName": "test",
@@ -76,9 +76,10 @@
     "del": "^3.0.0",
     "devtron": "^1.4.0",
     "electron": "^1.7.5",
+    "electron-builder": "^19.19.1",
     "electron-debug": "^1.4.0",
     "electron-devtools-installer": "^2.2.0",
-    "electron-builder": "^19.19.1",
+    "electron-updater": "^2.21.4",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.30.1",
