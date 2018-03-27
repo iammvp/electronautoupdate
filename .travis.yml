@@ -25,13 +25,7 @@ before_install:
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install --no-install-recommends -y icnsutils graphicsmagick xz-utils; fi
 install:
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-  export CERTIFICATE_P12=electrontest.p12;
-  echo $CSC_LINK | base64 — decode > $CERTIFICATE_P12;
-  export KEYCHAIN=build.keychain;
-  security create-keychain -p limi8902 $KEYCHAIN;
-  security default-keychain -s $KEYCHAIN;
-  security unlock-keychain -p limi8902 $KEYCHAIN;
-  security import $CERTIFICATE_P12 -k $KEYCHAIN -P $CSC_KEY_PASSWORD -T /usr/bin/codesign;
+  echo $CSC_LINK;
 - fi
 - nvm install 7
 - curl -o- -L https://yarnpkg.com/install.sh | bash
