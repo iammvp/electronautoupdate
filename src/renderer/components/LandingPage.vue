@@ -4,7 +4,7 @@
     <main>
       <div class="left-side">
         <span class="title">
-          Welcome to your fuck project!
+          Welcome to your noob project!
         </span>
         <system-information></system-information>
       </div>
