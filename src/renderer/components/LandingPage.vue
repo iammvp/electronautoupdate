@@ -4,7 +4,7 @@
     <main>
       <div class="left-side">
         <span class="title">
-          Welcome to your fuck project!
+          {{message}}
         </span>
         <system-information></system-information>
       </div>
@@ -30,15 +30,26 @@
 </template>
 
 <script>
+  import {ipcRenderer} from 'electron'
   import SystemInformation from './LandingPage/SystemInformation'
 
   export default {
     name: 'landing-page',
     components: { SystemInformation },
+    data () {
+      return {
+        message: 'Welcome'
+      }
+    },
     methods: {
       open (link) {
         this.$electron.shell.openExternal(link)
       }
+    },
+    mounted () {
+      ipcRenderer.on('message', (event, text) => {
+        this.message = text
+      })
     }
   }
 </script>
