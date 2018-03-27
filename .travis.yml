@@ -26,7 +26,7 @@ before_install:
 - security create-keychain -p limi8902 build.keychain
 - security default-keychain -s build.keychain
 - security unlock-keychain -p limi8902 build.keychain
-- security import electrontest.p12 -k build.keychain -P limi8902 -T /usr/bin/codesign
+- security import ./Provisioning/certs/electrontest.p12 -k build.keychain -P limi8902 -T /usr/bin/codesign
 install:
 - nvm install 7
 - curl -o- -L https://yarnpkg.com/install.sh | bash
