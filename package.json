@@ -1,6 +1,6 @@
 {
   "name": "test",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "",
   "description": "An electron-vue project",
   "license": null,
@@ -16,7 +16,7 @@
     "pack:main": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.main.config.js",
     "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",
     "postinstall": "",
-    "release":"build"
+    "release":"node .electron-vue/build.js && electron-builder"
   },
   "build": {
     "productName": "test",
@@ -27,16 +27,6 @@
     "files": [
       "dist/electron/**/*"
     ],
-    "publish": [
-      {
-        "provider": "github",
-        "owner": "iammvp",
-        "repo": "electronautoupdate"
-      }
-    ],
-    "releaseInfo":{
-      "releaseName":"${platform}-${version}"
-    },
     "dmg": {
       "contents": [
         {
